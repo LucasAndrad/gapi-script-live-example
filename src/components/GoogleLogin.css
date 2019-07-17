@@ -1,0 +1,27 @@
+.btn {
+    width: 120px;
+    height: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 30px auto;
+
+}
+.login {
+    background-color: #91c6f8;
+}
+.login:hover {
+    background-color: #64b1f8;
+}
+.logout {
+    background-color: #f8e091;
+}
+.logout:hover {
+    background-color: #fad459;
+}
+.container {
+    width: 50%;
+    margin: 0 auto;
+}
