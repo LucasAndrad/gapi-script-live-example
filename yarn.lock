@@ -4145,10 +4145,10 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-gapi-script@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gapi-script/-/gapi-script-1.0.0.tgz#0af1c13bf3985abe9b2047308d111f1cdc28e2e0"
-  integrity sha512-nbAhlJTwMNvHjzQ4pOQ53TKDJ7JiSycMGRyZgAdbiC+0qNQ823nigNPknwpYdgOcPj6awd6QqfU9crKiWcGsmg==
+gapi-script@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/gapi-script/-/gapi-script-1.0.2.tgz#8bc6ffa475ad6b4080caa59acaad70c29da4a875"
+  integrity sha512-/WW6FrT2MUag641pM2vDJ3QbHlBKngsv5oLnd9UyplFUGtf4TxyiRGIJKawaH+cb8jXDXni+jNMH6SsL2PxbUQ==
 
 gauge@~2.7.3:
   version "2.7.4"
