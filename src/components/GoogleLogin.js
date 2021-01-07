@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { gapi, loadAuth2 } from 'gapi-script'
 
-import UserCard from './UserCard';
+import { UserCard } from './UserCard';
 import './GoogleLogin.css';
 
 export const GoogleLogin  = () => {
