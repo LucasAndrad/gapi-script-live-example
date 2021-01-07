@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GoogleLogin from './components/GoogleLogin';
+import { GoogleLogin } from './components/GoogleLogin';
 import './App.css';
 
 function App() {
