@@ -1,7 +1,11 @@
 # React example for Google Login using gapi-script npm package
 This example was created with create-react-app.
 
-[Live example](https://google-gapi-login.herokuapp.com)
+[Live example](https://master.d3dnqnm15vsi52.amplifyapp.com/)
+
+**This example only use the login and logout feature from Google gapi, it does not collect or store any data of your data in third party applications**
+
+---
 
 ### Setup
 
