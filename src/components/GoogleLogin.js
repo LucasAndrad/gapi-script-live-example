@@ -7,19 +7,25 @@ import './GoogleLogin.css';
 export const GoogleLogin  = () => {
   const [user, setUser] = useState(null);
 
-  useEffect(async () => {
-    const auth2 = await loadAuth2(process.env.REACT_APP_CLIENT_ID, '')
-    if (auth2.isSignedIn.get()) {
-        updateUser(auth2.currentUser.get())
-    } else {
-        attachSignin(document.getElementById('customBtn'), auth2);
+  useEffect(() => {
+    const setAuth2 = async () => {
+      const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, '')
+      if (auth2.isSignedIn.get()) {
+          updateUser(auth2.currentUser.get())
+      } else {
+          attachSignin(document.getElementById('customBtn'), auth2);
+      }
     }
+    setAuth2();
   }, []);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (!user) {
-      const auth2 = await loadAuth2(process.env.REACT_APP_CLIENT_ID, '')
-      attachSignin(document.getElementById('customBtn'), auth2);
+      const setAuth2 = async () => {
+        const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, '')
+        attachSignin(document.getElementById('customBtn'), auth2);
+      }
+      setAuth2();
     }
   }, [user])
 
