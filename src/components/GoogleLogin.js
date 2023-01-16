@@ -17,7 +17,7 @@ export const GoogleLogin  = () => {
       }
     }
     setAuth2();
-  }, []);
+  }, [attachSignin]);
 
   useEffect(() => {
     if (!user) {
@@ -27,7 +27,7 @@ export const GoogleLogin  = () => {
       }
       setAuth2();
     }
-  }, [user])
+  }, [user, attachSignin]);
 
   const updateUser = (currentUser) => {
     const name = currentUser.getBasicProfile().getName();
