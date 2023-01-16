@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { gapi, loadAuth2 } from 'gapi-script'
 
 import { UserCard } from './UserCard';
@@ -7,14 +7,14 @@ import './GoogleLogin.css';
 export const GoogleLogin  = () => {
   const [user, setUser] = useState(null);
 
-  const attachSignin = (element, auth2) => {
+  const attachSignin = useCallback((element, auth2) => {
     auth2.attachClickHandler(element, {},
       (googleUser) => {
         updateUser(googleUser);
       }, (error) => {
       console.log(JSON.stringify(error))
     });
-  };
+  }, []);
 
   useEffect(() => {
     const setAuth2 = async () => {
