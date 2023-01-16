@@ -7,6 +7,15 @@ import './GoogleLogin.css';
 export const GoogleLogin  = () => {
   const [user, setUser] = useState(null);
 
+  const attachSignin = (element, auth2) => {
+    auth2.attachClickHandler(element, {},
+      (googleUser) => {
+        updateUser(googleUser);
+      }, (error) => {
+      console.log(JSON.stringify(error))
+    });
+  };
+
   useEffect(() => {
     const setAuth2 = async () => {
       const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, '')
@@ -35,15 +44,6 @@ export const GoogleLogin  = () => {
     setUser({
       name: name,
       profileImg: profileImg,
-    });
-  };
-
-  const attachSignin = (element, auth2) => {
-    auth2.attachClickHandler(element, {},
-      (googleUser) => {
-        updateUser(googleUser);
-      }, (error) => {
-      console.log(JSON.stringify(error))
     });
   };
 
