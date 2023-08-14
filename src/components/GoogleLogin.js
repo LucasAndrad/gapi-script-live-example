@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { gapi, loadAuth2 } from 'gapi-script'
+import { loadGapiInsideDOM, loadAuth2 } from 'gapi-script';
 
 import { UserCard } from './UserCard';
 import './GoogleLogin.css';
 
 export const GoogleLogin  = () => {
   const [user, setUser] = useState(null);
+  const [gapi, setGapi] = useState(null);
 
   useEffect(() => {
+    const loadGapi = async () => {
+      const newGapi = await loadGapiInsideDOM();
+      setGapi(newGapi);
+    }
+    loadGapi();
+  }, []);
+
+  useEffect(() => {
+    if (!gapi) return;
+
     const setAuth2 = async () => {
       const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, '')
       if (auth2.isSignedIn.get()) {
@@ -17,9 +28,11 @@ export const GoogleLogin  = () => {
       }
     }
     setAuth2();
-  }, []);
+  }, [gapi]);
 
   useEffect(() => {
+    if (!gapi) return;
+
     if (!user) {
       const setAuth2 = async () => {
         const auth2 = await loadAuth2(gapi, process.env.REACT_APP_CLIENT_ID, '')
@@ -27,7 +40,7 @@ export const GoogleLogin  = () => {
       }
       setAuth2();
     }
-  }, [user])
+  }, [user, gapi])
 
   const updateUser = (currentUser) => {
     const name = currentUser.getBasicProfile().getName();
